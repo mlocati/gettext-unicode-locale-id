@@ -663,10 +663,10 @@ void DumpLocaleChunksID(LocaleChunks* lc, const char* which, const char* expecte
 	} else {
 		printf("\t\t%s ID: %s (as expected)\n", which, expected ? expected : "<NULL>");
 	}
+	if (calculated) {
+		free(calculated);
+	}
 	if (die) {
-		if (calculated) {
-			free(calculated);
-		}
 		FreeLocaleChunks(lc);
 		exit(1);
 	}
@@ -674,7 +674,6 @@ void DumpLocaleChunksID(LocaleChunks* lc, const char* which, const char* expecte
 void DumpLocaleChunks(LocaleChunks* lc, const char* expectedGettextID, const char* expectedUnicodeID)
 {
 	size_t i;
-	char* id;
 	if (!lc) {
 		printf("\t\t<NULL>\n");
 	} else {
@@ -692,22 +691,6 @@ void DumpLocaleChunks(LocaleChunks* lc, const char* expectedGettextID, const cha
 		}
 		DumpLocaleChunksID(lc, "Gettext", expectedGettextID, LocaleChunksToGettextLocaleID(lc));
 		DumpLocaleChunksID(lc, "Unicode", expectedUnicodeID, LocaleChunksToUnicodeLocaleID(lc));
-		id = LocaleChunksToGettextLocaleID(lc);
-		if (id && expectedGettextID && strcasecmp(id, expectedGettextID)) {
-			printf("\t\tERROR: expected gettext ID: %s, calculated gettext ID: %s\n", expectedGettextID, id);
-			free(id);
-			FreeLocaleChunks(lc);
-			exit(1);
-		}
-		printf("\t\tGettext ID: %s\n", id ? id : "<NULL>");
-		if (id) {
-			free(id);
-		}
-		id = LocaleChunksToUnicodeLocaleID(lc);
-		printf("\t\tUnicode ID: %s\n", id ? id : "<NULL>");
-		if (id) {
-			free(id);
-		}
 	}
 }
 void Test(const char* id, int okForGettext, const char* expectedGettextID, int okForUnicode, const char* expectedUnicodeID)
