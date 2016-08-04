@@ -29,6 +29,8 @@ char *strndup (const char *s, size_t n)
  * Contain all the possible chunck of the locale identifiers.
  */
 typedef struct _LocaleChunks {
+	// Is this the "root" for Unicode?
+	int isRoot;
 	// Language ID (NULL or not empty)
 	char* language;
 	// Territory/Country/Region ID (NULL or not empty)
@@ -267,12 +269,8 @@ LocaleChunks* UnicodeLocaleIDToLocaleChunks(const char* locale)
 			if (!badData) {
 				if (chunkLengths[0] == 4 && !strncmp("root", chunks[0], 4)) {
 					// First chunk: "root"
-					result->language = strdup("root");
-					if (!result->language) {
-						badData = 1;
-					} else {
-						nextChunk = 1;
-					}
+					result->isRoot = 1;
+					nextChunk = 1;
 				} else {
 					// First chunks: language and/or script
 					if (chunkLengths[0] >= 2 && chunkLengths[0] <= 3) {
@@ -423,9 +421,11 @@ char* LocaleChunksToUnicodeLocaleID(const LocaleChunks* lc)
 	char* result;
 	size_t length, i;
 	result = NULL;
-	if (lc && (lc->language || lc->script)) {
+	if (lc && (lc->isRoot || lc->language || lc->script)) {
 		length = 1;
-		if (lc->language && lc->script) {
+		if (lc->isRoot) {
+			length += 4; //strlen("root");
+		} else if (lc->language && lc->script) {
 			length += strlen(lc->language) + 1 + strlen(lc->script);
 		} else {
 			length += strlen(lc->language ? lc->language : lc->script);
@@ -438,7 +438,9 @@ char* LocaleChunksToUnicodeLocaleID(const LocaleChunks* lc)
 		}
 		result = (char*)malloc(length * sizeof(char));
 		if(result) {
-			if (lc->language) {
+			if (lc->isRoot) {
+				strcpy(result, "root");
+			} else if (lc->language) {
 				strcpy(result, lc->language);
 				if (lc->script) {
 					strcat(result, "_");
