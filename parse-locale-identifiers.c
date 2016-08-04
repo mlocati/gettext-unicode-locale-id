@@ -686,7 +686,7 @@ void DumpLocaleChunks(LocaleChunks* lc, const char* expectedGettextID, const cha
 			printf("\t\tno variants\n");
 		} else {
 			for (i = 0; i < lc->variantCount; i++) {
-				printf("\t\tvariant %lu: %s\n", i, lc->variants[i]);
+				printf("\t\tvariant %lu: %s\n", (long unsigned int) i, lc->variants[i]);
 			}
 		}
 		DumpLocaleChunksID(lc, "Gettext", expectedGettextID, LocaleChunksToGettextLocaleID(lc));
