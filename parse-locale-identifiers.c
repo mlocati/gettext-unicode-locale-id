@@ -30,140 +30,140 @@ char *strndup (const char *s, size_t n)
  * Source: http://www.unicode.org/iso15924/iso15924-codes.html
  */
 const char* GettextModifierToUnicodeScriptDictionary[][2] = {
-	{"ahom", "Ahom"}, // Ahom, Tai Ahom
-	{"anatolian_hieroglyphs", "Hluw"}, // Anatolian Hieroglyphs (Luwian Hieroglyphs, Hittite Hieroglyphs)
-	{"arabic", "Arab"}, // Arabic
-	{"armenian", "Armn"}, // Armenian
-	{"avestan", "Avst"}, // Avestan
-	{"balinese", "Bali"}, // Balinese
-	{"bamum", "Bamu"}, // Bamum
-	{"bassa_vah", "Bass"}, // Bassa Vah
-	{"batak", "Batk"}, // Batak
-	{"bengali", "Beng"}, // Bengali
-	{"bopomofo", "Bopo"}, // Bopomofo
-	{"brahmi", "Brah"}, // Brahmi
-	{"braille", "Brai"}, // Braille
-	{"buginese", "Bugi"}, // Buginese
-	{"buhid", "Buhd"}, // Buhid
-	{"canadian_aboriginal", "Cans"}, // Unified Canadian Aboriginal Syllabics
-	{"carian", "Cari"}, // Carian
-	{"caucasian_albanian", "Aghb"}, // Caucasian Albanian
-	{"chakma", "Cakm"}, // Chakma
-	{"cham", "Cham"}, // Cham
-	{"cherokee", "Cher"}, // Cherokee
-	{"common", "Zyyy"}, // Code for undetermined script
-	{"coptic", "Copt"}, // Coptic
-	{"cuneiform", "Xsux"}, // Cuneiform, Sumero-Akkadian
-	{"cypriot", "Cprt"}, // Cypriot
-	{"cyrillic", "Cyrl"}, // Cyrillic
-	{"deseret", "Dsrt"}, // Deseret (Mormon)
-	{"devanagari", "Deva"}, // Devanagari (Nagari)
-	{"duployan", "Dupl"}, // Duployan shorthand, Duployan stenography
-	{"egyptian_hieroglyphs", "Egyp"}, // Egyptian hieroglyphs
-	{"elbasan", "Elba"}, // Elbasan
-	{"ethiopic", "Ethi"}, // Ethiopic (Ge'ez)
-	{"georgian", "Geok"}, // Khutsuri (Asomtavruli and Nuskhuri)
-	{"georgian", "Geor"}, // Georgian (Mkhedruli)
-	{"glagolitic", "Glag"}, // Glagolitic
-	{"gothic", "Goth"}, // Gothic
-	{"grantha", "Gran"}, // Grantha
-	{"greek", "Grek"}, // Greek
-	{"gujarati", "Gujr"}, // Gujarati
-	{"gurmukhi", "Guru"}, // Gurmukhi
-	{"han", "Hani"}, // Han (Hanzi, Kanji, Hanja)
-	{"hangul", "Hang"}, // Hangul (Hangeul)
-	{"hanunoo", "Hano"}, // Hanunoo
-	{"hatran", "Hatr"}, // Hatran
-	{"hebrew", "Hebr"}, // Hebrew
-	{"hiragana", "Hira"}, // Hiragana
-	{"imperial_aramaic", "Armi"}, // Imperial Aramaic
-	{"inherited", "Zinh"}, // Code for inherited script
-	{"inscriptional_pahlavi", "Phli"}, // Inscriptional Pahlavi
-	{"inscriptional_parthian", "Prti"}, // Inscriptional Parthian
-	{"javanese", "Java"}, // Javanese
-	{"kaithi", "Kthi"}, // Kaithi
-	{"kannada", "Knda"}, // Kannada
-	{"katakana", "Kana"}, // Katakana
-	{"katakana_or_hiragana", "Hrkt"}, // Japanese syllabaries (alias for Hiragana + Katakana)
-	{"kayah_li", "Kali"}, // Kayah Li
-	{"kharoshthi", "Khar"}, // Kharoshthi
-	{"khmer", "Khmr"}, // Khmer
-	{"khojki", "Khoj"}, // Khojki
-	{"khudawadi", "Sind"}, // Khudawadi, Sindhi
-	{"lao", "Laoo"}, // Lao
-	{"latin", "Latn"}, // Latin
-	{"lepcha", "Lepc"}, // Lepcha (Rong)
-	{"limbu", "Limb"}, // Limbu
-	{"linear_a", "Lina"}, // Linear A
-	{"linear_b", "Linb"}, // Linear B
-	{"lisu", "Lisu"}, // Lisu (Fraser)
-	{"lycian", "Lyci"}, // Lycian
-	{"lydian", "Lydi"}, // Lydian
-	{"mahajani", "Mahj"}, // Mahajani
-	{"malayalam", "Mlym"}, // Malayalam
-	{"mandaic", "Mand"}, // Mandaic, Mandaean
-	{"manichaean", "Mani"}, // Manichaean
-	{"meetei_mayek", "Mtei"}, // Meitei Mayek (Meithei, Meetei)
-	{"mende_kikakui", "Mend"}, // Mende Kikakui
-	{"meroitic_cursive", "Merc"}, // Meroitic Cursive
-	{"meroitic_hieroglyphs", "Mero"}, // Meroitic Hieroglyphs
-	{"miao", "Plrd"}, // Miao (Pollard)
-	{"modi", "Modi"}, // Modi
-	{"mongolian", "Mong"}, // Mongolian
-	{"mro", "Mroo"}, // Mro, Mru
-	{"multani", "Mult"}, // Multani
-	{"myanmar", "Mymr"}, // Myanmar (Burmese)
-	{"nabataean", "Nbat"}, // Nabataean
-	{"new_tai_lue", "Talu"}, // New Tai Lue
-	{"nko", "Nkoo"}, // N'Ko
-	{"ogham", "Ogam"}, // Ogham
-	{"ol_chiki", "Olck"}, // Ol Chiki (Ol Cemet', Ol, Santali)
-	{"old_hungarian", "Hung"}, // Old Hungarian (Hungarian Runic)
-	{"old_italic", "Ital"}, // Old Italic (Etruscan, Oscan, etc.)
-	{"old_north_arabian", "Narb"}, // Old North Arabian (Ancient North Arabian)
-	{"old_permic", "Perm"}, // Old Permic
-	{"old_persian", "Xpeo"}, // Old Persian
-	{"old_south_arabian", "Sarb"}, // Old South Arabian
-	{"old_turkic", "Orkh"}, // Old Turkic, Orkhon Runic
-	{"oriya", "Orya"}, // Oriya
-	{"osmanya", "Osma"}, // Osmanya
-	{"pahawh_hmong", "Hmng"}, // Pahawh Hmong
-	{"palmyrene", "Palm"}, // Palmyrene
-	{"pau_cin_hau", "Pauc"}, // Pau Cin Hau
-	{"phags_pa", "Phag"}, // Phags-pa
-	{"phoenician", "Phnx"}, // Phoenician
-	{"psalter_pahlavi", "Phlp"}, // Psalter Pahlavi
-	{"rejang", "Rjng"}, // Rejang (Redjang, Kaganga)
-	{"runic", "Runr"}, // Runic
-	{"samaritan", "Samr"}, // Samaritan
-	{"saurashtra", "Saur"}, // Saurashtra
-	{"sharada", "Shrd"}, // Sharada, Sarada
-	{"shavian", "Shaw"}, // Shavian (Shaw)
-	{"siddham", "Sidd"}, // Siddham, Siddham, Siddhamatrka
-	{"signwriting", "Sgnw"}, // SignWriting
-	{"sinhala", "Sinh"}, // Sinhala
-	{"sora_sompeng", "Sora"}, // Sora Sompeng
-	{"sundanese", "Sund"}, // Sundanese
-	{"syloti_nagri", "Sylo"}, // Syloti Nagri
-	{"syriac", "Syrc"}, // Syriac
-	{"tagalog", "Tglg"}, // Tagalog (Baybayin, Alibata)
-	{"tagbanwa", "Tagb"}, // Tagbanwa
-	{"tai_le", "Tale"}, // Tai Le
-	{"tai_tham", "Lana"}, // Tai Tham (Lanna)
-	{"tai_viet", "Tavt"}, // Tai Viet
-	{"takri", "Takr"}, // Takri, Tankri
-	{"tamil", "Taml"}, // Tamil
-	{"telugu", "Telu"}, // Telugu
-	{"thaana", "Thaa"}, // Thaana
-	{"thai", "Thai"}, // Thai
-	{"tibetan", "Tibt"}, // Tibetan
-	{"tifinagh", "Tfng"}, // Tifinagh (Berber)
-	{"tirhuta", "Tirh"}, // Tirhuta
-	{"ugaritic", "Ugar"}, // Ugaritic
-	{"unknown", "Zzzz"}, // Code for uncoded script
-	{"vai", "Vaii"}, // Vai
-	{"warang_citi", "Wara"}, // Warang Citi (Varang Kshiti)
-	{"yi", "Yiii"}, // Yi
+	{"ahom", "Ahom"}, /* Ahom, Tai Ahom */
+	{"anatolian_hieroglyphs", "Hluw"}, /* Anatolian Hieroglyphs (Luwian Hieroglyphs, Hittite Hieroglyphs) */
+	{"arabic", "Arab"}, /* Arabic */
+	{"armenian", "Armn"}, /* Armenian */
+	{"avestan", "Avst"}, /* Avestan */
+	{"balinese", "Bali"}, /* Balinese */
+	{"bamum", "Bamu"}, /* Bamum */
+	{"bassa_vah", "Bass"}, /* Bassa Vah */
+	{"batak", "Batk"}, /* Batak */
+	{"bengali", "Beng"}, /* Bengali */
+	{"bopomofo", "Bopo"}, /* Bopomofo */
+	{"brahmi", "Brah"}, /* Brahmi */
+	{"braille", "Brai"}, /* Braille */
+	{"buginese", "Bugi"}, /* Buginese */
+	{"buhid", "Buhd"}, /* Buhid */
+	{"canadian_aboriginal", "Cans"}, /* Unified Canadian Aboriginal Syllabics */
+	{"carian", "Cari"}, /* Carian */
+	{"caucasian_albanian", "Aghb"}, /* Caucasian Albanian */
+	{"chakma", "Cakm"}, /* Chakma */
+	{"cham", "Cham"}, /* Cham */
+	{"cherokee", "Cher"}, /* Cherokee */
+	{"common", "Zyyy"}, /* Code for undetermined script */
+	{"coptic", "Copt"}, /* Coptic */
+	{"cuneiform", "Xsux"}, /* Cuneiform, Sumero-Akkadian */
+	{"cypriot", "Cprt"}, /* Cypriot */
+	{"cyrillic", "Cyrl"}, /* Cyrillic */
+	{"deseret", "Dsrt"}, /* Deseret (Mormon) */
+	{"devanagari", "Deva"}, /* Devanagari (Nagari) */
+	{"duployan", "Dupl"}, /* Duployan shorthand, Duployan stenography */
+	{"egyptian_hieroglyphs", "Egyp"}, /* Egyptian hieroglyphs */
+	{"elbasan", "Elba"}, /* Elbasan */
+	{"ethiopic", "Ethi"}, /* Ethiopic (Ge'ez) */
+	{"georgian", "Geok"}, /* Khutsuri (Asomtavruli and Nuskhuri) */
+	{"georgian", "Geor"}, /* Georgian (Mkhedruli) */
+	{"glagolitic", "Glag"}, /* Glagolitic */
+	{"gothic", "Goth"}, /* Gothic */
+	{"grantha", "Gran"}, /* Grantha */
+	{"greek", "Grek"}, /* Greek */
+	{"gujarati", "Gujr"}, /* Gujarati */
+	{"gurmukhi", "Guru"}, /* Gurmukhi */
+	{"han", "Hani"}, /* Han (Hanzi, Kanji, Hanja) */
+	{"hangul", "Hang"}, /* Hangul (Hangeul) */
+	{"hanunoo", "Hano"}, /* Hanunoo */
+	{"hatran", "Hatr"}, /* Hatran */
+	{"hebrew", "Hebr"}, /* Hebrew */
+	{"hiragana", "Hira"}, /* Hiragana */
+	{"imperial_aramaic", "Armi"}, /* Imperial Aramaic */
+	{"inherited", "Zinh"}, /* Code for inherited script */
+	{"inscriptional_pahlavi", "Phli"}, /* Inscriptional Pahlavi */
+	{"inscriptional_parthian", "Prti"}, /* Inscriptional Parthian */
+	{"javanese", "Java"}, /* Javanese */
+	{"kaithi", "Kthi"}, /* Kaithi */
+	{"kannada", "Knda"}, /* Kannada */
+	{"katakana", "Kana"}, /* Katakana */
+	{"katakana_or_hiragana", "Hrkt"}, /* Japanese syllabaries (alias for Hiragana + Katakana) */
+	{"kayah_li", "Kali"}, /* Kayah Li */
+	{"kharoshthi", "Khar"}, /* Kharoshthi */
+	{"khmer", "Khmr"}, /* Khmer */
+	{"khojki", "Khoj"}, /* Khojki */
+	{"khudawadi", "Sind"}, /* Khudawadi, Sindhi */
+	{"lao", "Laoo"}, /* Lao */
+	{"latin", "Latn"}, /* Latin */
+	{"lepcha", "Lepc"}, /* Lepcha (Rong) */
+	{"limbu", "Limb"}, /* Limbu */
+	{"linear_a", "Lina"}, /* Linear A */
+	{"linear_b", "Linb"}, /* Linear B */
+	{"lisu", "Lisu"}, /* Lisu (Fraser) */
+	{"lycian", "Lyci"}, /* Lycian */
+	{"lydian", "Lydi"}, /* Lydian */
+	{"mahajani", "Mahj"}, /* Mahajani */
+	{"malayalam", "Mlym"}, /* Malayalam */
+	{"mandaic", "Mand"}, /* Mandaic, Mandaean */
+	{"manichaean", "Mani"}, /* Manichaean */
+	{"meetei_mayek", "Mtei"}, /* Meitei Mayek (Meithei, Meetei) */
+	{"mende_kikakui", "Mend"}, /* Mende Kikakui */
+	{"meroitic_cursive", "Merc"}, /* Meroitic Cursive */
+	{"meroitic_hieroglyphs", "Mero"}, /* Meroitic Hieroglyphs */
+	{"miao", "Plrd"}, /* Miao (Pollard) */
+	{"modi", "Modi"}, /* Modi */
+	{"mongolian", "Mong"}, /* Mongolian */
+	{"mro", "Mroo"}, /* Mro, Mru */
+	{"multani", "Mult"}, /* Multani */
+	{"myanmar", "Mymr"}, /* Myanmar (Burmese) */
+	{"nabataean", "Nbat"}, /* Nabataean */
+	{"new_tai_lue", "Talu"}, /* New Tai Lue */
+	{"nko", "Nkoo"}, /* N'Ko */
+	{"ogham", "Ogam"}, /* Ogham */
+	{"ol_chiki", "Olck"}, /* Ol Chiki (Ol Cemet', Ol, Santali) */
+	{"old_hungarian", "Hung"}, /* Old Hungarian (Hungarian Runic) */
+	{"old_italic", "Ital"}, /* Old Italic (Etruscan, Oscan, etc.) */
+	{"old_north_arabian", "Narb"}, /* Old North Arabian (Ancient North Arabian) */
+	{"old_permic", "Perm"}, /* Old Permic */
+	{"old_persian", "Xpeo"}, /* Old Persian */
+	{"old_south_arabian", "Sarb"}, /* Old South Arabian */
+	{"old_turkic", "Orkh"}, /* Old Turkic, Orkhon Runic */
+	{"oriya", "Orya"}, /* Oriya */
+	{"osmanya", "Osma"}, /* Osmanya */
+	{"pahawh_hmong", "Hmng"}, /* Pahawh Hmong */
+	{"palmyrene", "Palm"}, /* Palmyrene */
+	{"pau_cin_hau", "Pauc"}, /* Pau Cin Hau */
+	{"phags_pa", "Phag"}, /* Phags-pa */
+	{"phoenician", "Phnx"}, /* Phoenician */
+	{"psalter_pahlavi", "Phlp"}, /* Psalter Pahlavi */
+	{"rejang", "Rjng"}, /* Rejang (Redjang, Kaganga) */
+	{"runic", "Runr"}, /* Runic */
+	{"samaritan", "Samr"}, /* Samaritan */
+	{"saurashtra", "Saur"}, /* Saurashtra */
+	{"sharada", "Shrd"}, /* Sharada, Sarada */
+	{"shavian", "Shaw"}, /* Shavian (Shaw) */
+	{"siddham", "Sidd"}, /* Siddham, Siddham, Siddhamatrka */
+	{"signwriting", "Sgnw"}, /* SignWriting */
+	{"sinhala", "Sinh"}, /* Sinhala */
+	{"sora_sompeng", "Sora"}, /* Sora Sompeng */
+	{"sundanese", "Sund"}, /* Sundanese */
+	{"syloti_nagri", "Sylo"}, /* Syloti Nagri */
+	{"syriac", "Syrc"}, /* Syriac */
+	{"tagalog", "Tglg"}, /* Tagalog (Baybayin, Alibata) */
+	{"tagbanwa", "Tagb"}, /* Tagbanwa */
+	{"tai_le", "Tale"}, /* Tai Le */
+	{"tai_tham", "Lana"}, /* Tai Tham (Lanna) */
+	{"tai_viet", "Tavt"}, /* Tai Viet */
+	{"takri", "Takr"}, /* Takri, Tankri */
+	{"tamil", "Taml"}, /* Tamil */
+	{"telugu", "Telu"}, /* Telugu */
+	{"thaana", "Thaa"}, /* Thaana */
+	{"thai", "Thai"}, /* Thai */
+	{"tibetan", "Tibt"}, /* Tibetan */
+	{"tifinagh", "Tfng"}, /* Tifinagh (Berber) */
+	{"tirhuta", "Tirh"}, /* Tirhuta */
+	{"ugaritic", "Ugar"}, /* Ugaritic */
+	{"unknown", "Zzzz"}, /* Code for uncoded script */
+	{"vai", "Vaii"}, /* Vai */
+	{"warang_citi", "Wara"}, /* Warang Citi (Varang Kshiti) */
+	{"yi", "Yiii"}, /* Yi */
 	{NULL, NULL},
 };
 
@@ -209,21 +209,21 @@ const char* UnicodeScriptToGettextModifier(const char *unicodeScript) {
  * Contain all the possible chunck of the locale identifiers.
  */
 typedef struct _LocaleChunks {
-	// Is this the "root" for Unicode?
+	/* Is this the "root" for Unicode? */
 	int isRoot;
-	// Language ID (NULL or not empty)
+	/* Language ID (NULL or not empty) */
 	char* language;
-	// Territory/Country/Region ID (NULL or not empty)
+	/* Territory/Country/Region ID (NULL or not empty) */
 	char* territory;
-	// Codeset (NULL or not empty)
+	/* Codeset (NULL or not empty) */
 	char* codeset;
-	// Modifier (NULL or not empty)
+	/* Modifier (NULL or not empty) */
 	char* modifier;
-	// Script (NULL or not empty)
+	/* Script (NULL or not empty) */
 	char* script;
-	// Number of variant tags
+	/* Number of variant tags */
 	size_t variantCount;
-	// List of null-terminated variant tags (NULL if empty)
+	/* List of null-terminated variant tags (NULL if empty) */
 	char** variants;
 } LocaleChunks;
 
@@ -291,9 +291,9 @@ LocaleChunks* GettextLocaleIDToLocaleChunks(const char* locale)
 			case '@':
 			case '\0':
 				if (!result) {
-					// First chunk: language
+					/* First chunk: language */
 					if (p == locale) {
-						// Empty language -> error
+						/* Empty language -> error */
 						return NULL;
 					}
 					result = ConstructLocaleChunks();
@@ -303,7 +303,7 @@ LocaleChunks* GettextLocaleIDToLocaleChunks(const char* locale)
 					result->language = strndup(locale, p - locale);
 				} else {
 					if (p == separator + 1) {
-						// Empty chunk -> error
+						/* Empty chunk -> error */
 						FreeLocaleChunks(result);
 						return NULL;
 
@@ -311,7 +311,7 @@ LocaleChunks* GettextLocaleIDToLocaleChunks(const char* locale)
 					switch (*separator) {
 						case '_':
 							if (result->territory || result->codeset || result->modifier) {
-								// Duplicated or misplaced territory -> error
+								/* Duplicated or misplaced territory -> error */
 								FreeLocaleChunks(result);
 								return NULL;
 							}
@@ -319,7 +319,7 @@ LocaleChunks* GettextLocaleIDToLocaleChunks(const char* locale)
 							break;
 						case '.':
 							if (result->codeset || result->modifier) {
-								// Duplicated or misplaced codeset -> error
+								/* Duplicated or misplaced codeset -> error */
 								FreeLocaleChunks(result);
 								return NULL;
 							}
@@ -327,7 +327,7 @@ LocaleChunks* GettextLocaleIDToLocaleChunks(const char* locale)
 							break;
 						case '@':
 							if (result->modifier) {
-								// Duplicated modifier -> error
+								/* Duplicated modifier -> error */
 								FreeLocaleChunks(result);
 								return NULL;
 							}
@@ -339,7 +339,7 @@ LocaleChunks* GettextLocaleIDToLocaleChunks(const char* locale)
 				break;
 			default:
 				if (!isalnum(*p)) {
-					// Invalid character
+					/* Invalid character */
 					FreeLocaleChunks(result);
 					return NULL;
 				}
@@ -422,7 +422,7 @@ LocaleChunks* UnicodeLocaleIDToLocaleChunks(const char* locale)
 					case '_':
 					case '\0':
 						if (p == chunkStart) {
-							// Empty chunk
+							/* Empty chunk */
 							badData = 1;
 						} else {
 							chunks[numChunks] = chunkStart;
@@ -433,7 +433,7 @@ LocaleChunks* UnicodeLocaleIDToLocaleChunks(const char* locale)
 						break;
 					default:
 						if (!isalnum(*p)) {
-							// Invalid character
+							/* Invalid character */
 							badData = 1;
 						}
 						break;
@@ -450,13 +450,13 @@ LocaleChunks* UnicodeLocaleIDToLocaleChunks(const char* locale)
 			}
 			if (!badData) {
 				if (chunkLengths[0] == 4 && !strncmp("root", chunks[0], 4)) {
-					// First chunk: "root"
+					/* First chunk: "root" */
 					result->isRoot = 1;
 					nextChunk = 1;
 				} else {
-					// First chunks: language and/or script
+					/* First chunks: language and/or script */
 					if (chunkLengths[0] >= 2 && chunkLengths[0] <= 3) {
-						// language - alpha{2,3}
+						/* language - alpha{2,3} */
 						if (
 							isalpha(chunks[0][0])
 							&& isalpha(chunks[0][1])
@@ -492,9 +492,9 @@ LocaleChunks* UnicodeLocaleIDToLocaleChunks(const char* locale)
 					}
 				}
 				if (!badData && nextChunk < numChunks) {
-					// Next we may optionally have the region tag
+					/* Next we may optionally have the region tag */
 					if (chunkLengths[nextChunk] == 2) {
-						// Region - alpha{2}
+						/* Region - alpha{2} */
 						if (
 							isalpha(chunks[nextChunk][0])
 							&& isalpha(chunks[nextChunk][1])
@@ -506,7 +506,7 @@ LocaleChunks* UnicodeLocaleIDToLocaleChunks(const char* locale)
 						}
 						nextChunk++;
 					} else if(chunkLengths[nextChunk] == 3) {
-						// Region - digit{2}
+						/* Region - digit{2} */
 						if (
 							isdigit(chunks[nextChunk][0])
 							&& isdigit(chunks[nextChunk][1])
@@ -521,7 +521,7 @@ LocaleChunks* UnicodeLocaleIDToLocaleChunks(const char* locale)
 					}
 				}
 				if (!badData) {
-					// Finally we have a variable number of variant tags (alphanum{5,8} or digit+alphanum{3}) )
+					/* Finally we have a variable number of variant tags (alphanum{5,8} or digit+alphanum{3}) ) */
 					initialVariantChunk = nextChunk;
 					while (!badData && nextChunk < numChunks) {
 						switch (chunkLengths[nextChunk]) {
@@ -549,7 +549,7 @@ LocaleChunks* UnicodeLocaleIDToLocaleChunks(const char* locale)
 								}
 								break;
 							case 4:
-								// digit+alphanum{3}
+								/* digit+alphanum{3} */
 								if (!(
 									isdigit(chunks[nextChunk][0])
 									&& isalnum(chunks[nextChunk][1])
@@ -608,7 +608,7 @@ char* LocaleChunksToUnicodeLocaleID(const LocaleChunks* lc)
 	if (lc && (lc->isRoot || lc->language || script)) {
 		length = 1;
 		if (lc->isRoot) {
-			length += 4; //strlen("root");
+			length += 4; /* strlen("root"); */
 		} else if (lc->language && script) {
 			length += strlen(lc->language) + 1 + strlen(script);
 		} else {
