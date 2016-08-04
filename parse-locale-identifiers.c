@@ -677,6 +677,7 @@ void DumpLocaleChunks(LocaleChunks* lc, const char* expectedGettextID, const cha
 	if (!lc) {
 		printf("\t\t<NULL>\n");
 	} else {
+		printf("\t\tUnicode root? %s\n", lc->isRoot ? "yes" : "no");
 		printf("\t\tlanguage: %s\n", lc->language ? lc->language : "<NULL>");
 		printf("\t\tterritory: %s\n", lc->territory ? lc->territory : "<NULL>");
 		printf("\t\tcodeset: %s\n", lc->codeset ? lc->codeset : "<NULL>");
