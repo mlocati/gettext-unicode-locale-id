@@ -27,6 +27,7 @@ char *strndup (const char *s, size_t n)
 
 /*
  * Map from Gettext modifier identifiers to Unicode script identifiers.
+ * Source: http://www.unicode.org/iso15924/iso15924-codes.html
  */
 const char* GettextModifierToUnicodeScriptDictionary[][2] = {
 	{"ahom", "Ahom"}, // Ahom, Tai Ahom
