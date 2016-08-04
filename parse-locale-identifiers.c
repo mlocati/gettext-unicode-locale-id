@@ -26,6 +26,185 @@ char *strndup (const char *s, size_t n)
 #endif
 
 /*
+ * Map from Gettext modifier identifiers to Unicode script identifiers.
+ */
+const char* GettextModifierToUnicodeScriptDictionary[][2] = {
+	{"ahom", "Ahom"}, // Ahom, Tai Ahom
+	{"anatolian_hieroglyphs", "Hluw"}, // Anatolian Hieroglyphs (Luwian Hieroglyphs, Hittite Hieroglyphs)
+	{"arabic", "Arab"}, // Arabic
+	{"armenian", "Armn"}, // Armenian
+	{"avestan", "Avst"}, // Avestan
+	{"balinese", "Bali"}, // Balinese
+	{"bamum", "Bamu"}, // Bamum
+	{"bassa_vah", "Bass"}, // Bassa Vah
+	{"batak", "Batk"}, // Batak
+	{"bengali", "Beng"}, // Bengali
+	{"bopomofo", "Bopo"}, // Bopomofo
+	{"brahmi", "Brah"}, // Brahmi
+	{"braille", "Brai"}, // Braille
+	{"buginese", "Bugi"}, // Buginese
+	{"buhid", "Buhd"}, // Buhid
+	{"canadian_aboriginal", "Cans"}, // Unified Canadian Aboriginal Syllabics
+	{"carian", "Cari"}, // Carian
+	{"caucasian_albanian", "Aghb"}, // Caucasian Albanian
+	{"chakma", "Cakm"}, // Chakma
+	{"cham", "Cham"}, // Cham
+	{"cherokee", "Cher"}, // Cherokee
+	{"common", "Zyyy"}, // Code for undetermined script
+	{"coptic", "Copt"}, // Coptic
+	{"cuneiform", "Xsux"}, // Cuneiform, Sumero-Akkadian
+	{"cypriot", "Cprt"}, // Cypriot
+	{"cyrillic", "Cyrl"}, // Cyrillic
+	{"deseret", "Dsrt"}, // Deseret (Mormon)
+	{"devanagari", "Deva"}, // Devanagari (Nagari)
+	{"duployan", "Dupl"}, // Duployan shorthand, Duployan stenography
+	{"egyptian_hieroglyphs", "Egyp"}, // Egyptian hieroglyphs
+	{"elbasan", "Elba"}, // Elbasan
+	{"ethiopic", "Ethi"}, // Ethiopic (Ge'ez)
+	{"georgian", "Geok"}, // Khutsuri (Asomtavruli and Nuskhuri)
+	{"georgian", "Geor"}, // Georgian (Mkhedruli)
+	{"glagolitic", "Glag"}, // Glagolitic
+	{"gothic", "Goth"}, // Gothic
+	{"grantha", "Gran"}, // Grantha
+	{"greek", "Grek"}, // Greek
+	{"gujarati", "Gujr"}, // Gujarati
+	{"gurmukhi", "Guru"}, // Gurmukhi
+	{"han", "Hani"}, // Han (Hanzi, Kanji, Hanja)
+	{"hangul", "Hang"}, // Hangul (Hangeul)
+	{"hanunoo", "Hano"}, // Hanunoo
+	{"hatran", "Hatr"}, // Hatran
+	{"hebrew", "Hebr"}, // Hebrew
+	{"hiragana", "Hira"}, // Hiragana
+	{"imperial_aramaic", "Armi"}, // Imperial Aramaic
+	{"inherited", "Zinh"}, // Code for inherited script
+	{"inscriptional_pahlavi", "Phli"}, // Inscriptional Pahlavi
+	{"inscriptional_parthian", "Prti"}, // Inscriptional Parthian
+	{"javanese", "Java"}, // Javanese
+	{"kaithi", "Kthi"}, // Kaithi
+	{"kannada", "Knda"}, // Kannada
+	{"katakana", "Kana"}, // Katakana
+	{"katakana_or_hiragana", "Hrkt"}, // Japanese syllabaries (alias for Hiragana + Katakana)
+	{"kayah_li", "Kali"}, // Kayah Li
+	{"kharoshthi", "Khar"}, // Kharoshthi
+	{"khmer", "Khmr"}, // Khmer
+	{"khojki", "Khoj"}, // Khojki
+	{"khudawadi", "Sind"}, // Khudawadi, Sindhi
+	{"lao", "Laoo"}, // Lao
+	{"latin", "Latn"}, // Latin
+	{"lepcha", "Lepc"}, // Lepcha (Rong)
+	{"limbu", "Limb"}, // Limbu
+	{"linear_a", "Lina"}, // Linear A
+	{"linear_b", "Linb"}, // Linear B
+	{"lisu", "Lisu"}, // Lisu (Fraser)
+	{"lycian", "Lyci"}, // Lycian
+	{"lydian", "Lydi"}, // Lydian
+	{"mahajani", "Mahj"}, // Mahajani
+	{"malayalam", "Mlym"}, // Malayalam
+	{"mandaic", "Mand"}, // Mandaic, Mandaean
+	{"manichaean", "Mani"}, // Manichaean
+	{"meetei_mayek", "Mtei"}, // Meitei Mayek (Meithei, Meetei)
+	{"mende_kikakui", "Mend"}, // Mende Kikakui
+	{"meroitic_cursive", "Merc"}, // Meroitic Cursive
+	{"meroitic_hieroglyphs", "Mero"}, // Meroitic Hieroglyphs
+	{"miao", "Plrd"}, // Miao (Pollard)
+	{"modi", "Modi"}, // Modi
+	{"mongolian", "Mong"}, // Mongolian
+	{"mro", "Mroo"}, // Mro, Mru
+	{"multani", "Mult"}, // Multani
+	{"myanmar", "Mymr"}, // Myanmar (Burmese)
+	{"nabataean", "Nbat"}, // Nabataean
+	{"new_tai_lue", "Talu"}, // New Tai Lue
+	{"nko", "Nkoo"}, // N'Ko
+	{"ogham", "Ogam"}, // Ogham
+	{"ol_chiki", "Olck"}, // Ol Chiki (Ol Cemet', Ol, Santali)
+	{"old_hungarian", "Hung"}, // Old Hungarian (Hungarian Runic)
+	{"old_italic", "Ital"}, // Old Italic (Etruscan, Oscan, etc.)
+	{"old_north_arabian", "Narb"}, // Old North Arabian (Ancient North Arabian)
+	{"old_permic", "Perm"}, // Old Permic
+	{"old_persian", "Xpeo"}, // Old Persian
+	{"old_south_arabian", "Sarb"}, // Old South Arabian
+	{"old_turkic", "Orkh"}, // Old Turkic, Orkhon Runic
+	{"oriya", "Orya"}, // Oriya
+	{"osmanya", "Osma"}, // Osmanya
+	{"pahawh_hmong", "Hmng"}, // Pahawh Hmong
+	{"palmyrene", "Palm"}, // Palmyrene
+	{"pau_cin_hau", "Pauc"}, // Pau Cin Hau
+	{"phags_pa", "Phag"}, // Phags-pa
+	{"phoenician", "Phnx"}, // Phoenician
+	{"psalter_pahlavi", "Phlp"}, // Psalter Pahlavi
+	{"rejang", "Rjng"}, // Rejang (Redjang, Kaganga)
+	{"runic", "Runr"}, // Runic
+	{"samaritan", "Samr"}, // Samaritan
+	{"saurashtra", "Saur"}, // Saurashtra
+	{"sharada", "Shrd"}, // Sharada, Sarada
+	{"shavian", "Shaw"}, // Shavian (Shaw)
+	{"siddham", "Sidd"}, // Siddham, Siddham, Siddhamatrka
+	{"signwriting", "Sgnw"}, // SignWriting
+	{"sinhala", "Sinh"}, // Sinhala
+	{"sora_sompeng", "Sora"}, // Sora Sompeng
+	{"sundanese", "Sund"}, // Sundanese
+	{"syloti_nagri", "Sylo"}, // Syloti Nagri
+	{"syriac", "Syrc"}, // Syriac
+	{"tagalog", "Tglg"}, // Tagalog (Baybayin, Alibata)
+	{"tagbanwa", "Tagb"}, // Tagbanwa
+	{"tai_le", "Tale"}, // Tai Le
+	{"tai_tham", "Lana"}, // Tai Tham (Lanna)
+	{"tai_viet", "Tavt"}, // Tai Viet
+	{"takri", "Takr"}, // Takri, Tankri
+	{"tamil", "Taml"}, // Tamil
+	{"telugu", "Telu"}, // Telugu
+	{"thaana", "Thaa"}, // Thaana
+	{"thai", "Thai"}, // Thai
+	{"tibetan", "Tibt"}, // Tibetan
+	{"tifinagh", "Tfng"}, // Tifinagh (Berber)
+	{"tirhuta", "Tirh"}, // Tirhuta
+	{"ugaritic", "Ugar"}, // Ugaritic
+	{"unknown", "Zzzz"}, // Code for uncoded script
+	{"vai", "Vaii"}, // Vai
+	{"warang_citi", "Wara"}, // Warang Citi (Varang Kshiti)
+	{"yi", "Yiii"}, // Yi
+	{NULL, NULL},
+};
+
+/*
+ * Convert a Gettext modifier identifier to the corresponding Unicode script identifier.
+ * Returns NULL if gettextModifier is empty or if no correspondance has been found.
+ */
+const char* GettextModifierToUnicodeScript(const char *gettextModifier) {
+	const char* result;
+	size_t p;
+	result = NULL;
+	if (gettextModifier && gettextModifier[0]) {
+		for (p = 0; GettextModifierToUnicodeScriptDictionary[p][0]; p++) {
+			if (!strcasecmp(GettextModifierToUnicodeScriptDictionary[p][0], gettextModifier)) {
+				result = GettextModifierToUnicodeScriptDictionary[p][1];
+				break;
+			}
+		}
+	}
+	return result;
+}
+
+/*
+ * Convert a Unicode script identifier to the corresponding Gettext modifier identifier.
+ * Returns NULL if unicodeScript is empty or if no correspondance has been found.
+ */
+const char* UnicodeScriptToGettextModifier(const char *unicodeScript) {
+	const char* result;
+	size_t p;
+	result = NULL;
+	if (unicodeScript && unicodeScript[0]) {
+		for (p = 0; GettextModifierToUnicodeScriptDictionary[p][0]; p++) {
+			if (!strcasecmp(GettextModifierToUnicodeScriptDictionary[p][1], unicodeScript)) {
+				result = GettextModifierToUnicodeScriptDictionary[p][0];
+				break;
+			}
+		}
+	}
+	return result;
+}
+
+/*
  * Contain all the possible chunck of the locale identifiers.
  */
 typedef struct _LocaleChunks {
@@ -176,6 +355,7 @@ LocaleChunks* GettextLocaleIDToLocaleChunks(const char* locale)
 char * LocaleChunksToGettextLocaleID(const LocaleChunks* lc)
 {
 	char* result;
+	const char* modifier;
 	size_t length;
 	result = NULL;
 	if (lc && lc->language) {
@@ -186,8 +366,9 @@ char * LocaleChunksToGettextLocaleID(const LocaleChunks* lc)
 		if (lc->codeset) {
 			length += 1 + strlen(lc->codeset);
 		}
-		if (lc->modifier) {
-			length += 1 + strlen(lc->modifier);
+		modifier = lc->modifier ? lc->modifier : UnicodeScriptToGettextModifier(lc->script);
+		if (modifier) {
+			length += 1 + strlen(modifier);
 		}
 		result = (char*)malloc(length * sizeof(char));
 		if(result) {
@@ -200,9 +381,9 @@ char * LocaleChunksToGettextLocaleID(const LocaleChunks* lc)
 				strcat(result, ".");
 				strcat(result, lc->codeset);
 			}
-			if (lc->modifier) {
+			if (modifier) {
 				strcat(result, "@");
-				strcat(result, lc->modifier);
+				strcat(result, modifier);
 			}
 		}
 	}
@@ -419,16 +600,18 @@ LocaleChunks* UnicodeLocaleIDToLocaleChunks(const char* locale)
 char* LocaleChunksToUnicodeLocaleID(const LocaleChunks* lc)
 {
 	char* result;
+	const char* script;
 	size_t length, i;
 	result = NULL;
-	if (lc && (lc->isRoot || lc->language || lc->script)) {
+	script = lc ? (lc->script ? lc->script : GettextModifierToUnicodeScript(lc->modifier)) : NULL;
+	if (lc && (lc->isRoot || lc->language || script)) {
 		length = 1;
 		if (lc->isRoot) {
 			length += 4; //strlen("root");
-		} else if (lc->language && lc->script) {
-			length += strlen(lc->language) + 1 + strlen(lc->script);
+		} else if (lc->language && script) {
+			length += strlen(lc->language) + 1 + strlen(script);
 		} else {
-			length += strlen(lc->language ? lc->language : lc->script);
+			length += strlen(lc->language ? lc->language : script);
 		}
 		if (lc->territory) {
 			length += 1 + strlen(lc->territory);
@@ -442,12 +625,12 @@ char* LocaleChunksToUnicodeLocaleID(const LocaleChunks* lc)
 				strcpy(result, "root");
 			} else if (lc->language) {
 				strcpy(result, lc->language);
-				if (lc->script) {
+				if (script) {
 					strcat(result, "_");
-					strcat(result, lc->script);
+					strcat(result, script);
 				}
 			} else {
-				strcpy(result, lc->script);
+				strcpy(result, script);
 			}
 			if (lc->territory) {
 				strcat(result, "_");
@@ -466,7 +649,28 @@ char* LocaleChunksToUnicodeLocaleID(const LocaleChunks* lc)
 /************************/
 /* Simple testing stuff */
 /************************/
-void DumpLocaleChunks(LocaleChunks* lc)
+void DumpLocaleChunksID(LocaleChunks* lc, const char* which, const char* expected, char* calculated)
+{
+	int die;
+	die = 0;
+	if (expected && calculated && strcasecmp(expected, calculated)) {
+		printf("\t\tERROR: expected %s ID: %s, calculated: %s\n", which, expected, calculated);
+		die = 1;
+	} else if ((!expected) != (!calculated)) {
+		printf("\t\tERROR: expected %s ID: %s, calculated: %s\n", which, expected ? expected : "<NULL>", calculated ? calculated : "<NULL>");
+		die = 1;
+	} else {
+		printf("\t\t%s ID: %s (as expected)\n", which, expected ? expected : "<NULL>");
+	}
+	if (die) {
+		if (calculated) {
+			free(calculated);
+		}
+		FreeLocaleChunks(lc);
+		exit(1);
+	}
+}
+void DumpLocaleChunks(LocaleChunks* lc, const char* expectedGettextID, const char* expectedUnicodeID)
 {
 	size_t i;
 	char* id;
@@ -485,7 +689,15 @@ void DumpLocaleChunks(LocaleChunks* lc)
 				printf("\t\tvariant %lu: %s\n", i, lc->variants[i]);
 			}
 		}
+		DumpLocaleChunksID(lc, "Gettext", expectedGettextID, LocaleChunksToGettextLocaleID(lc));
+		DumpLocaleChunksID(lc, "Unicode", expectedUnicodeID, LocaleChunksToUnicodeLocaleID(lc));
 		id = LocaleChunksToGettextLocaleID(lc);
+		if (id && expectedGettextID && strcasecmp(id, expectedGettextID)) {
+			printf("\t\tERROR: expected gettext ID: %s, calculated gettext ID: %s\n", expectedGettextID, id);
+			free(id);
+			FreeLocaleChunks(lc);
+			exit(1);
+		}
 		printf("\t\tGettext ID: %s\n", id ? id : "<NULL>");
 		if (id) {
 			free(id);
@@ -497,10 +709,14 @@ void DumpLocaleChunks(LocaleChunks* lc)
 		}
 	}
 }
-void Test(const char* id, int okForGettext, int okForUnicode)
+void Test(const char* id, int okForGettext, const char* expectedGettextID, int okForUnicode, const char* expectedUnicodeID)
 {
 	LocaleChunks* lc;
-	printf("%s\n", id ? id : "<NULL>");
+	if (id) {
+		printf("\"%s\"\n", id);
+	} else {
+		printf("<NULL>\n");
+	}
 	lc = GettextLocaleIDToLocaleChunks(id);
 	if (lc == NULL) {
 		if (okForGettext) {
@@ -513,8 +729,8 @@ void Test(const char* id, int okForGettext, int okForUnicode)
 		printf("\tERROR: it has been detected as valid for Gettext, but it should't\n");
 		exit(1);
 	} else {
-		printf("\tGettext identifier ok:\n");
-		DumpLocaleChunks(lc);
+		printf("\tValid Gettext identifier\n");
+		DumpLocaleChunks(lc, expectedGettextID, expectedUnicodeID);
 		FreeLocaleChunks(lc);
 	}
 	lc = UnicodeLocaleIDToLocaleChunks(id);
@@ -529,53 +745,56 @@ void Test(const char* id, int okForGettext, int okForUnicode)
 		printf("\tERROR: it has been detected as valid for Unicode, but it should't\n");
 		exit(1);
 	} else {
-		printf("\tUnicode identifier ok:\n");
-		DumpLocaleChunks(lc);
+		printf("\tValid Unicode identifier\n");
+		DumpLocaleChunks(lc, expectedGettextID, expectedUnicodeID);
 		FreeLocaleChunks(lc);
 	}
 }
 int main(void) {
-	Test("it_IT.utf8@euro", 1, 0);
-	Test("it_IT.utf8", 1, 0);
-	Test("it_IT@euro", 1, 0);
-	Test("it_IT.utf8", 1, 0);
-	Test("it@euro", 1, 0);
-	Test("it.utf8", 1, 0);
-	Test("it_IT", 1, 1);
-	Test("it", 1, 1);
+	Test("it_IT.utf8@euro", 1, "it_IT.utf8@euro", 0, "it_IT");
+	Test("it_IT.utf8", 1, "it_IT.utf8", 0, "it_IT");
+	Test("it_IT@euro", 1, "it_IT@euro", 0, "it_IT");
+	Test("it_IT.utf8", 1, "it_IT.utf8", 0, "it_IT");
+	Test("it@euro", 1, "it@euro", 0, "it");
+	Test("it.utf8", 1, "it.utf8", 0, "it");
+	Test("it_IT", 1, "it_IT", 1, "it_IT");
+	Test("it", 1, "it", 1, "it");
+	Test("it@latin", 1, "it@latin", 0, "it_Latn");
 
-	Test("it-Latn-IT-POSIX-NYNORSK", 0, 1);
-	Test("it-Latn-IT-POSIX", 0, 1);
-	Test("it-Latn-IT-NYNORSK", 0, 1);
-	Test("it-Latn-IT", 0, 1);
-	Test("it-Latn-POSIX-NYNORSK", 0, 1);
-	Test("it-Latn-POSIX", 0, 1);
-	Test("it-Latn-NYNORSK", 0, 1);
-	Test("it-Latn", 0, 1);
-	Test("it-IT-POSIX-NYNORSK", 0, 1);
-	Test("it-IT-POSIX", 0, 1);
-	Test("it-IT-NYNORSK", 0, 1);
-	Test("it-IT", 0, 1);
-	Test("it_IT", 1, 1);
-	Test("it-POSIX-NYNORSK", 0, 1);
-	Test("it-POSIX", 0, 1);
-	Test("it-NYNORSK", 0, 1);
-	Test("it", 1, 1);
+	Test("it-Latn-IT-POSIX-NYNORSK", 0, "it_IT@latin", 1, "it_Latn_IT_POSIX_NYNORSK");
+	Test("it-Latn-IT-POSIX", 0, "it_IT@latin", 1, "it_Latn_IT_POSIX");
+	Test("it-Latn-IT-NYNORSK", 0, "it_IT@latin", 1, "it_Latn_IT_NYNORSK");
+	Test("it-Latn-IT", 0, "it_IT@latin", 1, "it_Latn_IT");
+	Test("it-Latn-POSIX-NYNORSK", 0, "it@latin", 1, "it_Latn_POSIX_NYNORSK");
+	Test("it-Latn-POSIX", 0, "it@latin", 1, "it_Latn_POSIX");
+	Test("it-Latn-NYNORSK", 0, "it@latin", 1, "it_Latn_NYNORSK");
+	Test("it-Latn", 0, "it@latin", 1, "it_Latn");
+	Test("it-IT-POSIX-NYNORSK", 0, "it_IT", 1, "it_IT_POSIX_NYNORSK");
+	Test("it-IT-POSIX", 0, "it_IT", 1, "it_IT_POSIX");
+	Test("it-IT-NYNORSK", 0, "it_IT", 1, "it_IT_NYNORSK");
+	Test("it-IT", 0, "it_IT", 1, "it_IT");
+	Test("it_IT", 1, "it_IT", 1, "it_IT");
+	Test("it-POSIX-NYNORSK", 0, "it", 1, "it_POSIX_NYNORSK");
+	Test("it-POSIX", 0, "it", 1, "it_POSIX");
+	Test("it-NYNORSK", 0, "it", 1, "it_NYNORSK");
+	Test("it", 1, "it", 1, "it");
 
-	Test("Latn-IT-POSIX-NYNORSK", 0, 1);
-	Test("Latn-IT-POSIX", 0, 1);
-	Test("Latn-IT-NYNORSK", 0, 1);
-	Test("Latn-IT", 0, 1);
-	Test("Latn-POSIX-NYNORSK", 0, 1);
-	Test("Latn-POSIX", 0, 1);
-	Test("Latn-NYNORSK", 0, 1);
-	Test("Latn", 1, 1);
+	Test("Latn-IT-POSIX-NYNORSK", 0, NULL, 1, "Latn_IT_POSIX_NYNORSK");
+	Test("Latn-IT-POSIX", 0, NULL, 1, "Latn_IT_POSIX");
+	Test("Latn-IT-NYNORSK", 0, NULL, 1, "Latn_IT_NYNORSK");
+	Test("Latn-IT", 0, NULL, 1, "Latn_IT");
+	Test("Latn-POSIX-NYNORSK", 0, NULL, 1, "Latn_POSIX_NYNORSK");
+	Test("Latn-POSIX", 0, NULL, 1, "Latn_POSIX");
+	Test("Latn-NYNORSK", 0, NULL, 1, "Latn_NYNORSK");
 
-	Test(NULL, 0, 0);
-	Test("", 0, 0);
-	Test(" ", 0, 0);
-	Test("  ", 0, 0);
-	Test("foo@bar@baz", 0, 0);
+	Test("root-Latn", 0, NULL, 0, NULL);
+	Test("root-IT", 0, NULL, 1, "root_IT");
+
+	Test(NULL, 0, NULL, 0, NULL);
+	Test("", 0, NULL, 0, NULL);
+	Test(" ", 0, NULL, 0, NULL);
+	Test("  ", 0, NULL, 0, NULL);
+	Test("foo@bar@baz", 0, NULL, 0, NULL);
 
 	printf("\n\nAll ok.\n");
 	return 0;
