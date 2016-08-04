@@ -10,6 +10,21 @@
 #include <string.h>
 #include <ctype.h>
 
+#ifndef __USE_GNU
+char *strndup (const char *s, size_t n)
+{
+	char * result;
+	result = (char*) malloc((n + 1) * sizeof(char));
+	if (result) {
+		if (n > 0) {
+			memcpy(result, s, n);
+		}
+		result[n] = '\0';
+	}
+	return result;
+}
+#endif
+
 /*
  * Contain all the possible chunck of the locale identifiers.
  */
